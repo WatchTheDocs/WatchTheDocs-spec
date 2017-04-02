@@ -30,7 +30,7 @@ an ordered mapping:
 ```yaml
     ---
     slides: !!omap
-      - "Quick start...":
+      - "## Quick start":
       - "Now create another file...":
     ---
 ```
@@ -166,3 +166,7 @@ So, here are the basic elements of ".watch" file syntax:
     - "More slides...":
     ---
 ```
+
+If you'd like to contribute or interested in the future of this project,
+please drop a line to this email
+[watchthedocs@davidavs.com](mailto:watchthedocs@davidavs.com?subject="I'd like to contribute").
