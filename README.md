@@ -1,7 +1,7 @@
                                                                                                         
 # WatchTheDocs
 
-A tool to turn your text documentation into video presentations
+A tool to turn your text documentation into presentations
 with voice-over.
 
 ## Quick Start
@@ -24,7 +24,8 @@ For example, README.md from your GitHub project.
  ```
     
 Now create another file with the same name and extension ".watch".
-It will be YAML with at least one ordered mapping, "slides".
+It will be YAML with at least one element, "slides", which is
+an ordered mapping:
 
 ```yaml
     ---
@@ -34,7 +35,7 @@ It will be YAML with at least one ordered mapping, "slides".
     ---
 ```
 
-Each key in the ordered mapping must correspond to a block in the
+Each key in the mapping must correspond to a block in the
 Markdown document. You can use a few starting words of the block,
 followed by ellipsis. Such a block defines beginning of a slide
 in the presentation. Remember to use colon at the end as it's an ordered
@@ -142,5 +143,26 @@ next slide begins:
     - "Second slide starts here...":
       end: "This (and subsequent) paragraphs will be skipped..."
     - "And this one goes to the 3rd slide...":
+    ---
+```
+
+## Summary of the Syntax
+
+So, here are the basic elements of ".watch" file syntax:
+
+```yaml
+    ---
+    slides: !!omap
+    - "Ordered mapping of slides...":
+      say:
+        - Optional list of blocks for the voice-over...
+      show:
+        - Optional list of blocks for the slides...
+      highlight:
+        - What to highlight...
+      reveal:
+        - What to reveal...
+      end: "Where to end the current slide..."
+    - "More slides...":
     ---
 ```
