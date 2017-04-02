@@ -168,5 +168,5 @@ So, here are the basic elements of ".watch" file syntax:
 ```
 
 If you'd like to contribute or interested in the future of this project,
-please drop a line to this email
-[watchthedocs@davidavs.com](mailto:watchthedocs@davidavs.com?subject="I'd like to contribute").
+please drop a line to this email address:
+[watchthedocs@davidavs.com](mailto:watchthedocs@davidavs.com).
