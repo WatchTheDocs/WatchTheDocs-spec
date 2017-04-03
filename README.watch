@@ -1,7 +1,8 @@
 ---
 slides: !!omap
   - "## Quick start":
-  - "Here is how...":
+  - "Here is how... (1 of 2)":
+  - "Here is how... (2 of 2)":
   - "## Customizing slideshow and voiceover":
   - '## "say" and "show"':
   - '## "highlight" and "reveal"':

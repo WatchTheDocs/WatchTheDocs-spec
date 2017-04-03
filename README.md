@@ -47,6 +47,10 @@ Here is how it happens:
      same time generate voice-over. Only the first sentence of each item
      goes to the slide; the rest is only used for the voice-over.
 
+Here is how this document would be split into slides:
+
+![Example of auto-splitting this README](img/split_example.png)
+
 To get a nice presentation the Markdown document has to be well-balanced.
 If it isn't you may consider customizing it using a YAML file.
 
