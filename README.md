@@ -17,13 +17,43 @@ For example, README.md from your GitHub project.
     
     # Quick start
     
-    First, create a markdown document.
+    First, create a markdown document:
     
-    Now create another file with the same name.
+        # My Presentation Title
+        
+        Document text
+        Lorem ipsum...
     
- ```
+    That's it, you are ready to go!
     
-Now create another file with the same name and extension ".watch".
+```
+
+That's it, you are ready to go! WatchTheDocs will automatically generate
+slides and voice-over based on the layout and content.
+
+Here is how it happens:
+
+  1. The top header and paragraphs following it are skipped by default
+     (unless there are no more headers). It forms description of the presentation.
+  2. Header always starts a new slide. First paragraph following the header
+     always goes to the voice-over for that slide.
+  3. Simple paragraph always goes to the voice-over.
+  4. Tables, code blocks and images are placed on a separate slide
+     together with a preceding header (if any), a preceding paragraph,
+     or a header followed by a single paragraph. All subsequent paragraphs
+     go to the voice-over for that slide until there is a condition for a
+     new slide.
+  5. Ordered and numbered lists are placed on a separate slide and at the
+     same time generate voice-over. Only the first sentence of each item
+     goes to the slide; the rest is only used for the voice-over.
+
+To get a nice presentation the Markdown document has to be well-balanced.
+If it isn't you may consider customizing it using a YAML file.
+
+## Customizing slideshow and voiceover
+
+To customize your presentation create another file
+with the same name and extension ".watch".
 It will be YAML with at least one element, "slides", which is
 an ordered mapping:
 
@@ -31,7 +61,8 @@ an ordered mapping:
     ---
     slides: !!omap
       - "## Quick start":
-      - "Now create another file...":
+      - "Here is how...":
+      - "## Customizing slideshow...":
     ---
 ```
 
