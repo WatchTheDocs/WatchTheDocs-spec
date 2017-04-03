@@ -72,9 +72,9 @@ followed by ellipsis. Such a block defines beginning of a slide
 in the presentation. Remember to use colon at the end as it's an ordered
 mapping, not a sequence.
 
-By default simple paragraphs will go to the voice-over, while
-all other blocks (images, tables, code blocks, ordered and unordered
-lists) will be displayed as the slide content.
+By default the same rules apply for determining what goes to the slideshow
+and what becomes voice-over, as in the automatic presentation
+generation.
 
 ## "say" and "show"
 
