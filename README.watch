@@ -1,8 +1,9 @@
 ---
 slides: !!omap
   - "## Quick start":
-  - "Now create another file...":
-  - "By default simple paragraphs will go to the voice-over...":
+  - "Here is how...":
+  - "## Customizing slideshow and voiceover":
+  - '## "say" and "show"':
   - '## "highlight" and "reveal"':
     show:
       - "```yaml..."
@@ -16,7 +17,7 @@ slides: !!omap
       "is a mapping between"               : "It's a mapping..."
       "The fragment will be highlighted"   : "highlighted as you speak"
       "Highlighting is performed..."       : "... performed by char..."
-  - 'Similarly to "highlight", the "reveal" element defines what to reveal':
+  - 'Similarly to "highlight", the "reveal" element defines what to reveal...':
   - "## End of the slide":
   - "## Summary of the syntax":
     say:
