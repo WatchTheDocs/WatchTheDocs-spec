@@ -1,0 +1,35 @@
+---
+slides: !!omap
+  - "## Quick start":
+  - "Here is how... (1 of 2)":
+  - "Here is how... (2 of 2)":
+  - "## Customizing slideshow and voiceover":
+  - '## "say" and "show"':
+  - '## "highlight" and "reveal"':
+    show:
+      - "```yaml..."
+      - |
+          * You can add "highlight" element
+          * It's a mapping between the voice-over and text on the slide
+          * The text is highlighted as you speak
+          * It's performed by characters rather than blocks
+    highlight:
+      'you can use "highlight" element...' : '"highlight" element'
+      "is a mapping between"               : "It's a mapping..."
+      "The fragment will be highlighted"   : "highlighted as you speak"
+      "Highlighting is performed..."       : "... performed by char..."
+  - 'Similarly to "highlight", the "reveal" element defines what to reveal...':
+  - "## End of the slide":
+  - "## Summary of the syntax":
+    say:
+      - "So, here are the basic elements..."
+      - |
+          "slides" is an ordered mapping, with each key defining
+          where a slide starts. It has following optional elements:
+          "say" explicitly defines content of the voice-over;
+          "show" explicitly defines content of the slides;
+          "highlight" and "reveal" are a mappings between sentences
+          within the voiceover and parts of the slides to be highlighted
+          or revealed;
+          "end" specifies a block where the current slide ends.
+---
