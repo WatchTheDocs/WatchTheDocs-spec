@@ -31,7 +31,9 @@ For example, README.md from your GitHub project.
 That's it, you are ready to go! WatchTheDocs will automatically generate
 slides and voice-over based on the layout and content.
 
-Here is how it happens:
+See a prototype example on the (Website)[https://goo.gl/ZPKzMU]
+
+Here is how it works:
 
   1. The top header and paragraphs following it are skipped by default
      (unless there are no more headers). It forms description of the presentation.
