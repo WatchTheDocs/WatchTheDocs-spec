@@ -2,10 +2,11 @@ var path = require('path');
 
 
 module.exports = {
-  entry: './src/index',
+  entry: './src/reveal-plugin',
   output: {
     filename: 'watchthedocs-reveal-plugin.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
     library: 'WatchTheDocs',
     libraryTarget: 'var'
   },
