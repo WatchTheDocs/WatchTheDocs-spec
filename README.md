@@ -51,7 +51,7 @@ Here is how it works:
 
 Here is how this document would be split into slides:
 
-![Example of auto-splitting this README](img/split_example.png)
+![Example of auto-splitting this README](docs/img/split_example.png)
 
 To get a nice presentation the Markdown document has to be well-balanced.
 If it isn't you may consider customizing it using a YAML file.

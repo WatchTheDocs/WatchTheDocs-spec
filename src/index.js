@@ -1,5 +1,5 @@
 import Reveal from 'reveal.js';
 
 export const run = () => {
-  alert('WTD Loaded!');
+  console.log('WTD Loaded!');
 }
