@@ -4,5 +4,4 @@ const component = () => {
   return element;
 }
 
-document.body.appendChild(component());
-
+export default component;
