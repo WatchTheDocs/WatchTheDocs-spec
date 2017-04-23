@@ -29,7 +29,7 @@ export const init = async (script_id, voiceover_id) => {
 
   // 3. Generate slides and add them to "reveal"
   const slides = document.querySelector('.reveal .slides');
-  slides.classList.add('slides');
+  slides.innerHTML = '';
   doc.slides.forEach((item) => {
     const md = Object.keys(item)[0];
     const slide = document.createElement('section');

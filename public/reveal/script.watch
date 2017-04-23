@@ -1,7 +1,9 @@
 ---
 slides: !!omap
   - ? |
-        ## WatchTheDocs Example
+        # WatchTheDocs Example
+
+        &copy; WatchTheDocs.com 2017
     :
       duration: 5000
       audio: false
