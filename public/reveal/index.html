@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/css/theme/night.css">
 
+    <script id="wtd_script" type="text/yaml" src="script.watch"></script>
+
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
-      </div>
+      <div class="slides"></div>
     </div>
 
+    <audio id="wtd_voice" src="voice-over.mp3" style="display: none"></audio>
 
     <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
     <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script src="dist/watchthedocs-reveal-plugin.js"></script>
+    <script>
+        WatchTheDocs.init('wtd_script', 'wtd_voice')
+    </script>
 
     <script>
         // More info https://github.com/hakimel/reveal.js#configuration
@@ -41,11 +46,8 @@
                 async: true },
               { src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
                 async: true,
-                callback: function() { hljs.initHighlightingOnLoad(); } },
+                callback: function() { hljs.initHighlightingOnLoad(); } }
 
-              /* WatchTheDocs plugin */
-              { src: 'dist/watchthedocs-reveal-plugin.js',
-                callback: function() { WatchTheDocs.run() } }
             ]
         });
     </script>

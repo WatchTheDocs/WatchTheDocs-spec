@@ -17,6 +17,7 @@ module.exports = {
     historyApiFallback: {
       rewrites: [
         { from: /^\/?$/, to: '/public/reveal/index.html' },
+        { from: /^\/script.watch$/, to: '/public/reveal/script.watch' }
       ]
     }
   }
