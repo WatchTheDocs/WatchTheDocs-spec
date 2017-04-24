@@ -22,7 +22,6 @@ export const init = async (script_id, voiceover_id) => {
   // 1. Load the script
   const script_tag = document.getElementById(script_id);
   const script = await load(script_tag);
-  console.log(script);
 
   // 2. Convert YAML to JS object
   const doc = yaml.safeLoad(script);
@@ -31,13 +30,12 @@ export const init = async (script_id, voiceover_id) => {
   const slides = document.querySelector('.reveal .slides');
   slides.innerHTML = '';
   doc.slides.forEach((item) => {
-    const md = Object.keys(item)[0];
+    const id = Object.keys(item)[0];
     const slide = document.createElement('section');
-    console.log(md);
-    slide.textContent = md;
+    slide.textContent = item[id].show[0]; // TODO: More than one!
     slide.setAttribute('data-markdown', '');
-    if (item[md].duration) {
-      slide.setAttribute('data-autoslide', item[md].duration);
+    if (item[id].duration) {
+      slide.setAttribute('data-autoslide', item[id].duration);
     }
     slides.appendChild(slide);
   });

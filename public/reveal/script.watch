@@ -1,17 +1,14 @@
 ---
 slides: !!omap
-  - ? |
-        # WatchTheDocs Example
-
-        &copy; WatchTheDocs.com 2017
-    :
+  - "# WatchTheDocs...":
       duration: 5000
       audio: false
-  - ? |
-        ## Slide 2
+      show:
+        - |
+            # WatchTheDocs Example
 
-        This is the second slide. This text is displayed.
-    :
+            &copy; WatchTheDocs.com 2017
+  - "This is the second slide...":
       duration: 10000
       audio:
         position: 0
@@ -19,3 +16,8 @@ slides: !!omap
       say:
         - "The second slide has a title and one paragraph."
         - "It also has a voice-over."
+      show:
+        - |
+            ## Slide 2
+
+            This is the second slide. This text is displayed.
