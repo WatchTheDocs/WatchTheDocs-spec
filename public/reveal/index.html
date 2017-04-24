@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WatchTheDocs RevealJS Presentation</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+
+    <script id="wtd_script" type="text/yaml" src="script.watch"></script>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"></div>
+    </div>
+
+    <audio id="wtd_voice" src="voice-over.mp3" style="display: none"></audio>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script src="dist/watchthedocs-reveal-plugin.js"></script>
+    <script> WatchTheDocs.init('wtd_script', 'wtd_voice') </script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+            transition: 'fade',
+            autoSlide: 1,
+            controls: false,
+            progress: false,
+            // width: 960,
+            // height: 800,
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+              /* Default Reveal.js dependencies */
+              { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
+              { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
+              { src: 'node_modules/reveal.js/plugin/notes/notes.js',
+                async: true },
+              { src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+                async: true,
+                callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ]
+        });
+    </script>
+  </body>
+</html>
