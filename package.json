@@ -13,9 +13,11 @@
   "license": "MIT",
   "devDependencies": {
     "js-yaml": "^3.8.3",
-    "reveal.js": "^3.4.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2",
     "whatwg-fetch": "^2.0.3"
+  },
+  "dependencies": {
+    "reveal.js": "git+https://github.com/avsd/reveal.js.git"
   }
 }
