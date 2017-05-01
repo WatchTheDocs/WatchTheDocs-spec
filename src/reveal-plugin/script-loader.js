@@ -20,11 +20,6 @@ import 'whatwg-fetch';
  *
  */
 const load = (script_tag) => {
-  // Make sure type is "text/yaml"
-  if (script_tag.getAttribute('type') !== 'text/yaml') {
-    throw new Error('WatchTheDocs script has wrong MIME type. Must be "text/yaml".');
-  }
-
   // Return text if "src" attribute is not specified
   const src = script_tag.getAttribute('src');
   if (!src) {
