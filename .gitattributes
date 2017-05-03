@@ -1,2 +1,2 @@
 *.watch linguist-language=yaml
-*.mustache.js linguist-language=django
+*.mustache.js linguist-language=html+django
