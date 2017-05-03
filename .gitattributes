@@ -1,2 +1,1 @@
 *.watch linguist-language=yaml
-*.mustache.js linguist-language=html+django
