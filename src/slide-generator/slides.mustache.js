@@ -1,4 +1,4 @@
-{{!
+/*{{!
   
   ------------------
   View example :
@@ -29,8 +29,10 @@
       }
     ]
   }
-}}
 
+}}*/
+
+export default `
 {{#slides}}
   <section data-markdown {{#duration}}data-autoslide="{{.}}"{{/duration}}>
     {{#show}}{{.}}
@@ -38,3 +40,4 @@
   </section>
 {{/slides}}
 <section></section>
+`
