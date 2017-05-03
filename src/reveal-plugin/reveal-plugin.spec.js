@@ -1,24 +1,19 @@
-import Browser from 'zombie';
+import { jsdom } from 'jsdom';
 import { getTags } from './index';
 import load from './script-loader';
 
-const getDocument = (html) => {
-  const browser = new Browser();
-  browser.visit('about:blank');
-  browser.window.document.write(html);
-  return browser.window.document;
-};
+const getDocument = (html) => jsdom(html).documentElement;
 
 describe('HTML file initializer', () => {
 
   it('returns scriptTag and slidesTag', () => {
-    const document = getDocument(
-      '<html><head>' + 
-      '<script type="text/yaml"></script>' +
-      '</head><body>' +
-      '<div class="reveal"><div class="slides"></div></div>' +
-      '</body></html>'
-    );
+    const document = getDocument(`
+      <html><head>
+      <script type="text/yaml"></script>
+      </head><body>
+      <div class="reveal"><div class="slides"></div></div>
+      </body></html>'
+    `);
 
     const tags = getTags(document);
 
@@ -49,10 +44,10 @@ describe('HTML file initializer', () => {
 describe('WatchTheDocs script loader', () => {
 
   const getScriptTag = (tagHtml) => {
-    const document = getDocument(
-      '<html><head>' + tagHtml + '</head><body>' +
-      '<div class="reveal"><div class="slides"></div></div>' +
-      '</body></html>'
+    const document = getDocument(`
+      <html><head>${tagHtml}</head><body>
+      <div class="reveal"><div class="slides"></div></div>
+      </body></html>`
     );
     return getTags(document).scriptTag;
   }
