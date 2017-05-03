@@ -1,5 +1,6 @@
-                                                                                                        
 # WatchTheDocs
+
+[![Build Status](https://travis-ci.org/WatchTheDocs/watchthedocs.svg?branch=master)](https://travis-ci.org/WatchTheDocs/watchthedocs)
 
 A tool to turn your text documentation into presentations
 with voice-over.
