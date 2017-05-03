@@ -1,5 +1,18 @@
 import 'whatwg-fetch';
 
+const dedent = (content) => {
+  // Indent the very first line with many spaces
+  var ret = Array(content.length).join(' ') + content.trim();
+
+  // while there are no unindented lines,
+  // dedent all lines by one space:
+  while( /^[^ ]/gmu.test(ret) === false ) {
+    ret = ret.replace(/^ /gmu, '');
+  }
+
+  return ret.trim();
+}
+
 /*
  * Loads WatchTheDocs script from the <script> tag.
  * 
@@ -23,7 +36,7 @@ const load = (script_tag) => {
   // Return text if "src" attribute is not specified
   const src = script_tag.getAttribute('src');
   if (!src) {
-    return script_tag.text;
+    return dedent(script_tag.textContent);
   }
 
   // If we have "src" then load it

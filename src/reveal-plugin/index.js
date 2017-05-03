@@ -2,7 +2,7 @@
 import load from './script-loader';
 import generateSlides from '../slide-generator';
 
-export const loadTags = (doc) => {
+export const getTags = (doc) => {
   const scriptTag = doc.querySelector('script[type="text/yaml"]');
   const slidesTag = doc.querySelector('.reveal .slides');
   if (!scriptTag) {
@@ -24,7 +24,7 @@ export const loadTags = (doc) => {
 
 export const initialize = async (init_obj) => {
   // 1. Get DOM elements
-  const { scriptTag, slidesTag } = loadTags(document);
+  const { scriptTag, slidesTag } = getTags(document);
 
   // 2. Generate HTML slides from script tag
   //    and place them into slides tag
