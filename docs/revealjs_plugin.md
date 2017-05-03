@@ -32,25 +32,25 @@ Here is an example:
 
 ```yaml
 ---
-slides: !!omap
-  - "# WatchTheDocs...":
-      duration: 5000
-      show:
-        - |
-            # WatchTheDocs Example
+slides:
+  -
+    duration: 5000
+    show:
+      - |
+          # WatchTheDocs Example
 
-            &copy; WatchTheDocs.com 2017
-  - "This is the second slide...":
-      duration: 10000
-      audio:
-        position: 0
-        duration: 7000
-      say:
-        - "The second slide has a title and one paragraph."
-        - "It also has a voice-over."
-      show:
-        - "## Slide 2"
-        - "This is the second slide. This text is displayed."
+          &copy; WatchTheDocs.com 2017
+  -
+    duration: 10000
+    audio:
+      position: 0
+      duration: 7000
+    say:
+      - "The second slide has a title and one paragraph."
+      - "It also has a voice-over."
+    show:
+      - "## Slide 2"
+      - "This is the second slide. This text is displayed."
 ```
 
 * The root element, `slides`, is an ordered map.
@@ -125,25 +125,25 @@ them from the filesystem:
 ```html
 <script type="text/yaml">
 ---
-slides: !!omap
-  - "# WatchTheDocs...":
-      duration: 5000
-      show:
-        - |
-            # WatchTheDocs Example
+slides:
+  -
+    duration: 5000
+    show:
+      - |
+          # WatchTheDocs Example
 
-            &copy; WatchTheDocs.com 2017
-  - "This is the second slide...":
-      duration: 10000
-      audio:
-        position: 0
-        duration: 7000
-      say:
-        - "The second slide has a title and one paragraph."
-        - "It also has a voice-over."
-      show:
-        - "## Slide 2"
-        - "This is the second slide. This text is displayed."
+          &copy; WatchTheDocs.com 2017
+  - 
+    duration: 10000
+    audio:
+      position: 0
+      duration: 7000
+    say:
+      - "The second slide has a title and one paragraph."
+      - "It also has a voice-over."
+    show:
+      - "## Slide 2"
+      - "This is the second slide. This text is displayed."
 </script>
 ```
 

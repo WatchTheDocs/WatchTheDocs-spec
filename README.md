@@ -61,22 +61,24 @@ If it isn't you may consider customizing it using a YAML file.
 To customize your presentation create another file
 with the same name and extension ".watch".
 It will be YAML with at least one element, "slides", which is
-an ordered mapping:
+a list of mappings:
 
 ```yaml
     ---
-    slides: !!omap
-      - "## Quick start":
-      - "Here is how...":
-      - "## Customizing slideshow...":
+    slides:
+      -
+        slide: "## Quick start"
+      -
+        slide: "Here is how..."
+      -
+        slide: "## Customizing slideshow..."
     ---
 ```
 
-Each key in the mapping must correspond to a block in the
+Each elment has a "slide" key. Its value must correspond to a block in the
 Markdown document. You can use a few starting words of the block,
 followed by ellipsis. Such a block defines beginning of a slide
-in the presentation. Remember to use colon at the end as it's an ordered
-mapping, not a sequence.
+in the presentation.
 
 By default the same rules apply for determining what goes to the slideshow
 and what becomes voice-over, as in the automatic presentation
@@ -89,13 +91,16 @@ what to say and/or what to display on the slide:
 
 ```yaml
     ---
-    slides: !!omap
-      - "Quick start...":
-      - "Now create another file...":
+    slides:
+      -
+        slide: "Quick start..."
+      -
+        slide: "Now create another file..."
         show:
           - "README.watch file:"
           - "```yaml..."
-      - "By default simple paragraphs...":
+      -
+        slide: "By default simple paragraphs..."
         show:
           - |
             ## Specifying explicitly what to say/show
@@ -109,7 +114,7 @@ what to say and/or what to display on the slide:
           - "Similarly..."
 ```
 
-Similarly to the slide keys, each element in the "say" and "show"
+Similarly to the "slide" value, each element in the "say" and "show"
 sequences may be first few words of a corresponding block in the
 Markdown document, followed by ellipsis. However, you may specify
 content that does not exist in the document. If there is only
@@ -124,19 +129,22 @@ to define what to highlight on the slide for each part of the
 voiceover:
 
 ```yaml
-     - 'In addition to "show" and "say" you can use "highlight" element...':
-       show:
-         - "```yaml..."
-         - |
-           * You can add "highlight" element
-           * It's a mapping between the voice-over and text on the slide
-           * The text is highlighted as you speak
-           * It's performed by characters rather than blocks
-       highlight:
-         'you can use "highlight" element...' : '"highlight" element'
-         "is a mapping between"               : "It's a mapping..."
-         "The fragment will be highlighted"   : "highlighted as you speak"
-         "Highlighting is performed..."       : "... performed by char..."
+---
+slides:
+ -
+   slide: 'In addition to "show" and "say" you can use "highlight" element...'
+   show:
+     - "```yaml..."
+     - |
+       * You can add "highlight" element
+       * It's a mapping between the voice-over and text on the slide
+       * The text is highlighted as you speak
+       * It's performed by characters rather than blocks
+   highlight:
+     'you can use "highlight" element...' : '"highlight" element'
+     "is a mapping between"               : "It's a mapping..."
+     "The fragment will be highlighted"   : "highlighted as you speak"
+     "Highlighting is performed..."       : "... performed by char..."
 ```
 
 "highlight" is a mapping between the text to be pronounced and
@@ -152,17 +160,20 @@ Similarly to "highlight", the "reveal" element defines what to
 reveal on the slide for each part of the voiceover:
 
 ```yaml
-     - 'Similarly to "highlight", the "reveal" element defines...':
-       show:
-         - "```yaml..."
-         - |
-           * You may add "reveal" element
-           * Text will be hidden initially
-       reveal:
-         'the "reveal" element...': >
-           * You may add "reveal" element
-         "Text on your slide...": >
-           * Text will be hidden...
+---
+slides:
+ -
+   slide: 'Similarly to "highlight", the "reveal" element defines...'
+   show:
+     - "```yaml..."
+     - |
+       * You may add "reveal" element
+       * Text will be hidden initially
+   reveal:
+     'the "reveal" element...': >
+       * You may add "reveal" element
+     "Text on your slide...": >
+       * Text will be hidden...
 ```
 
 Text on your slide will be hidden initially, and revealed gradually.
@@ -174,13 +185,15 @@ Sometimes it may be useful to end slide a few blocks before the
 next slide begins:
 
 ```yaml
-    ---
-    slides: !!omap
-    - "This goes to the first slide...":
-    - "Second slide starts here...":
-      end: "This (and subsequent) paragraphs will be skipped..."
-    - "And this one goes to the 3rd slide...":
-    ---
+---
+slides:
+  -
+    slide: "This goes to the first slide..."
+  -
+    slide: "Second slide starts here..."
+    end: "This (and subsequent) paragraphs will be skipped..."
+  -
+    slide: "And this one goes to the 3rd slide..."
 ```
 
 ## Summary of the Syntax
@@ -188,20 +201,21 @@ next slide begins:
 So, here are the basic elements of ".watch" file syntax:
 
 ```yaml
-    ---
-    slides: !!omap
-    - "Ordered mapping of slides...":
-      say:
-        - Optional list of blocks for the voice-over...
-      show:
-        - Optional list of blocks for the slides...
-      highlight:
-        - What to highlight...
-      reveal:
-        - What to reveal...
-      end: "Where to end the current slide..."
-    - "More slides...":
-    ---
+---
+slides:
+ -
+   slide: "Ordered mapping of slides..."
+   say:
+     - Optional list of blocks for the voice-over...
+   show:
+     - Optional list of blocks for the slides...
+   highlight:
+     - What to highlight...
+   reveal:
+     - What to reveal...
+   end: "Where to end the current slide..."
+ -
+   slide: "Next slide..."
 ```
 
 If you'd like to contribute or interested in the future of this project,

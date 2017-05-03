@@ -30,14 +30,16 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "jasmine": "^2.6.0",
-    "webpack": "^2.4.1",
+    "raw-loader": "^0.5.1",
     "webpack-dev-server": "^2.4.2",
     "zombie": "^5.0.5"
   },
   "dependencies": {
     "headjs": "^1.0.3",
     "js-yaml": "^3.8.3",
+    "mustache": "^2.3.0",
     "reveal.js": "git+https://github.com/avsd/reveal.js.git",
+    "webpack": "^2.4.1",
     "whatwg-fetch": "^2.0.3"
   }
 }
