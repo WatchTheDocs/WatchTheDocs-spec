@@ -11,7 +11,8 @@ module.exports = {
     libraryTarget: 'var'
   },
   externals: {
-    'reveal.js': 'Reveal'
+    'reveal.js': 'Reveal',
+    'headjs': 'head'
   },
   devServer: {
     historyApiFallback: {

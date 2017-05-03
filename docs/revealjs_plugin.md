@@ -32,25 +32,25 @@ Here is an example:
 
 ```yaml
 ---
-slides: !!omap
-  - "# WatchTheDocs...":
-      duration: 5000
-      show:
-        - |
-            # WatchTheDocs Example
+slides:
+  -
+    duration: 5000
+    show:
+      - |
+          # WatchTheDocs Example
 
-            &copy; WatchTheDocs.com 2017
-  - "This is the second slide...":
-      duration: 10000
-      audio:
-        position: 0
-        duration: 7000
-      say:
-        - "The second slide has a title and one paragraph."
-        - "It also has a voice-over."
-      show:
-        - "## Slide 2"
-        - "This is the second slide. This text is displayed."
+          &copy; WatchTheDocs.com 2017
+  -
+    duration: 10000
+    audio:
+      position: 0
+      duration: 7000
+    say:
+      - "The second slide has a title and one paragraph."
+      - "It also has a voice-over."
+    show:
+      - "## Slide 2"
+      - "This is the second slide. This text is displayed."
 ```
 
 * The root element, `slides`, is an ordered map.
@@ -75,12 +75,11 @@ with all the parts represented as separate assets:
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WatchTheDocs Presentation</title>
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
     <link rel="stylesheet" href="reveal.js/css/theme/black.css">
 
-    <script id="wtd_script" type="text/yaml" src="script.watch"></script>
+    <script type="text/yaml" src="script.watch"></script>
 
   </head>
   <body>
@@ -88,18 +87,16 @@ with all the parts represented as separate assets:
     <div class="reveal">
       <div class="slides"></div>
     </div>
-    <audio id="wtd_voice" src="voice-over.mp3"></audio>
+    <audio src="voice-over.mp3"></audio>
 
     <!-- Scripts -->
     <script src="reveal.js/lib/js/head.min.js"></script>
     <script src="reveal.js/js/reveal.js"></script>
-
-    <script src="watchthedocs-reveal-plugin.js"></script>
-    <script> WatchTheDocs.init('wtd_script', 'wtd_voice') </script>
+    <script src="dist/watchthedocs-reveal-plugin.js"></script>
 
     <script>
         // More info https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
+        WatchTheDocs.initialize({
             history: true,
             transition: 'fade',
             autoSlide: 1,
@@ -109,12 +106,10 @@ with all the parts represented as separate assets:
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [
               /* Default Reveal.js dependencies */
-              { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
-              { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
-              { src: 'node_modules/reveal.js/plugin/notes/notes.js',
-                async: true },
-              { src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
-                async: true,
+              { src: 'reveal.js/plugin/markdown/marked.js' },
+              { src: 'reveal.js/plugin/markdown/markdown.js' },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true },
+              { src: 'reveal.js/plugin/highlight/highlight.js', async: true,
                 callback: function() { hljs.initHighlightingOnLoad(); } }
             ]
         });
@@ -128,27 +123,27 @@ to place WatchTheDocs slides content inside the HTML file, as the browser can no
 them from the filesystem:
 
 ```html
-<script id="wtd_script" type="text/yaml">
+<script type="text/yaml">
 ---
-slides: !!omap
-  - "# WatchTheDocs...":
-      duration: 5000
-      show:
-        - |
-            # WatchTheDocs Example
+slides:
+  -
+    duration: 5000
+    show:
+      - |
+          # WatchTheDocs Example
 
-            &copy; WatchTheDocs.com 2017
-  - "This is the second slide...":
-      duration: 10000
-      audio:
-        position: 0
-        duration: 7000
-      say:
-        - "The second slide has a title and one paragraph."
-        - "It also has a voice-over."
-      show:
-        - "## Slide 2"
-        - "This is the second slide. This text is displayed."
+          &copy; WatchTheDocs.com 2017
+  - 
+    duration: 10000
+    audio:
+      position: 0
+      duration: 7000
+    say:
+      - "The second slide has a title and one paragraph."
+      - "It also has a voice-over."
+    show:
+      - "## Slide 2"
+      - "This is the second slide. This text is displayed."
 </script>
 ```
 
