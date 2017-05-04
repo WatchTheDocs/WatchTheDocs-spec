@@ -1,4 +1,4 @@
-import generateSlides from './index'
+import generateSlides from './slide-generator';
 import dedent from 'dedent';
 import { customJasmineMatchers } from '../test-utils';
 

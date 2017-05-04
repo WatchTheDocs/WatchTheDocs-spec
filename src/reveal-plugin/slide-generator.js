@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
 import Mustache from 'mustache';
 
-import template from './slides.mustache.js';
+import template from './templates/slides.mustache.js';
 
 
 const generateSlides = (script) => {

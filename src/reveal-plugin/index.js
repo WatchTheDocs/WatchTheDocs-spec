@@ -1,6 +1,6 @@
 //import head from 'headjs';
 import load from './script-loader';
-import generateSlides from '../slide-generator';
+import generateSlides from './slide-generator';
 
 export const getTags = (doc) => {
   const scriptTag = doc.querySelector('script[type="text/yaml"]');
