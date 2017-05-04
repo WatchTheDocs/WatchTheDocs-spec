@@ -5,11 +5,13 @@ export const customJasmineMatchers = {
   toEqualHtml: (util, customEqualityTesters) => ({
 
     compare: (actual, expected) => {
-      const strip = (v) => v.replace(/>\s+/, '> ').replace(/\s+</, ' <');
+      const strip = (v) => v.replace(/>\s+/g, '> ').replace(/\s+</g, ' <');
       const pass = util.equals(
         jsdom(strip(actual)).body.innerHTML,
         jsdom(strip(expected)).body.innerHTML,
         customEqualityTesters);
+      // console.log(jsdom(strip(actual)).body.innerHTML);
+      // console.log(jsdom(strip(expected)).body.innerHTML);
       return {
         pass,
         message: (pass

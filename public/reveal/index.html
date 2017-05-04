@@ -7,8 +7,35 @@
 
     <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css"><!-- syntax highlighting -->
 
     <script type="text/yaml" src="script.watch"></script>
+
+    <style>
+      .reveal .audio-notes {
+        position: absolute;
+        text-align: center;
+        max-height: 5em;
+        width: 70%;
+        left: 15%;
+        bottom: -5em;
+        padding: 10px;
+        z-index: 1;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #fff;
+        background-color: rgba(0,0,0,0.5);
+        overflow: auto;
+        box-sizing: border-box;
+        font-family: Helvetica, sans-serif;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .reveal .audio-notes {
+          font-size: 14px;
+        }
+      }
+    </style>
 
   </head>
   <body>

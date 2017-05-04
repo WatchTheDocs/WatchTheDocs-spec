@@ -34,9 +34,12 @@
 
 export default `
 {{#slides}}
-  <section data-markdown {{#duration}}data-autoslide="{{.}}"{{/duration}}>
+  <section data-markdown{{#duration}} data-autoslide="{{.}}"{{/duration}}>
     {{#show}}{{.}}
     {{/show}}
+    {{#say}}
+      <footer class="audio-notes"> {{.}} </footer> 
+    {{/say}}
   </section>
 {{/slides}}
 <section></section>
