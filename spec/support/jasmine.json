@@ -7,5 +7,6 @@
     "../spec/helpers/**/*.js"
   ],
   "stopSpecOnExpectationFailure": false,
-  "random": false
+  "random": false,
+  "isVerbose": true
 }
