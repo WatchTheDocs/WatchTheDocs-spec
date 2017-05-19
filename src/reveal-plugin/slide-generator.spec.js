@@ -195,7 +195,7 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
     `
   }));
 
-  it('a 10 sec slide with multiple subtitles', () => check({
+  xit('a 10 sec slide with multiple subtitles', () => check({
     yaml: `
       ---
       slides:
@@ -229,7 +229,7 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
     `
   }));
 
-  it('two slides; one of them with multiple subtitles', () => check({
+  xit('two slides; one of them with multiple subtitles', () => check({
     yaml: `
       ---
       slides:
