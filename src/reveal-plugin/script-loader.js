@@ -11,7 +11,7 @@ const dedent = (content) => {
   }
 
   return ret.trim();
-}
+};
 
 /*
  * Loads WatchTheDocs script from the <script> tag.
@@ -41,6 +41,6 @@ const load = (script_tag) => {
 
   // If we have "src" then load it
   return fetch(src).then(response => response.text());
-}
+};
 
 export default load;

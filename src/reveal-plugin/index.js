@@ -2,6 +2,7 @@
 import load from './script-loader';
 import generateSlides from './slide-generator';
 
+
 export const getTags = (doc) => {
   const scriptTag = doc.querySelector('script[type="text/yaml"]');
   const slidesTag = doc.querySelector('.reveal .slides');
@@ -20,7 +21,7 @@ export const getTags = (doc) => {
     ].join('\n'));
   }
   return { scriptTag, slidesTag };
-}
+};
 
 export const initialize = async (init_obj) => {
   // 1. Get DOM elements
@@ -34,4 +35,4 @@ export const initialize = async (init_obj) => {
   // 3. Initialise RevealJS
   const Reveal = require('reveal.js');
   Reveal.initialize(init_obj);
-}
+};
