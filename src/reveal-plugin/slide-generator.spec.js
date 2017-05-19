@@ -8,7 +8,7 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
   const check = ({yaml, html}) => {
     const result = generateSlides(dedent(yaml)).trim();
     expect(result).toEqualHtml(dedent(html));
-  }
+  };
 
   beforeEach(() => { jasmine.addMatchers(customJasmineMatchers); });
 
@@ -17,7 +17,7 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
       ---
       slides:
     `,
-    html: `<section></section>`
+    html: '<section></section>'
   }));
 
   it('a single slide', () => check({
@@ -135,7 +135,7 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
   const check = ({yaml, html}) => {
     const result = generateSlides(dedent(yaml)).trim();
     expect(result).toEqualHtml(dedent(html));
-  }
+  };
 
   beforeEach(() => { jasmine.addMatchers(customJasmineMatchers); });
 
