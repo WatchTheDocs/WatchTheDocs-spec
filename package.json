@@ -26,21 +26,19 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "dedent": "^0.7.0",
     "jasmine": "^2.6.0",
     "jsdom": "^7.2.2",
     "node-jsdom": "^3.1.5",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
     "headjs": "^1.0.3",
     "js-yaml": "^3.8.3",
     "mustache": "^2.3.0",
     "reveal.js": "git+https://github.com/avsd/reveal.js.git",
-    "webpack": "^2.4.1",
+    "webpack": "^2.7.0",
     "whatwg-fetch": "^2.0.3"
   }
 }
