@@ -17,7 +17,7 @@ import template from './templates/slides.mustache.js';
  */
 const balanceWords = (listOfStrings, totalDuration) => {
   const vowels = /[aouie]/i;
-  const punctuation = /(\s*[.,;:()!?]\s*)+/i;
+  const punctuation = /(\s*[.,;:()!?]\s*)+/ig;
   const intervals = listOfStrings.map(s => (
     s.match(vowels).length +
     2 * s.match(punctuation).length
@@ -59,7 +59,7 @@ const generateSlides = (script) => {
       context = (Array.isArray(this.say) ? this.say : [this.say]).map(text => ({ text, duration: false }));
     }
     return function (template, render) {
-      const text = context.map(item => Mustache.render(template, item)).join('\n');
+      const text = context.map(item => Mustache.render(template, item)).join('');
       return render(text);
     };
   };

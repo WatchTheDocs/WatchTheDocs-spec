@@ -38,9 +38,9 @@ export default `
     {{#show}}{{.}}
     {{/show}}
     {{#renderSay}}
-      <footer
-        class="audio-notes{{#duration}} fragment fragment-visible{{/duration}}"
-        {{#duration}}data-autoslide="{{.}}"{{/duration}}> {{text}} </footer> 
+      <footer class="audio-notes{{#duration}} fragment current-visible{{/duration}}" {{#duration}}data-autoslide="{{.}}"{{/duration}}>
+        {{text}}
+      </footer> 
     {{/renderSay}}
   </section>
 {{/slides}}
