@@ -50,7 +50,7 @@ const generateSlides = (script) => {
   const renderAutoSlide = function() { return !!this.duration && !isFragmented(this); };
   const renderSay = function() {
     if (!this.say || this.say.length === 0) {
-      return function (template, render) { return render('') };
+      return function (template, render) { return render(''); };
     }
     let context;
     if (isFragmented(this)) {
