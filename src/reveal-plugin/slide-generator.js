@@ -11,6 +11,6 @@ const generateSlides = (script) => {
 
   // 2. Generate slides and return them as HTML
   return Mustache.render(template, doc);
-}
+};
 
 export default generateSlides;

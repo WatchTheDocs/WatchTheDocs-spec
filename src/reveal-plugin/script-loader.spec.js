@@ -13,7 +13,7 @@ describe('WatchTheDocs script loader', () => {
       </body></html>`
     );
     return getTags(document).scriptTag;
-  }
+  };
    
   it('Loads the script from the tag content', () => {
     const tag = getScriptTag([

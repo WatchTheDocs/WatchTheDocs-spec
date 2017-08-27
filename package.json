@@ -20,14 +20,19 @@
     "build": "webpack",
     "start": "node_modules/.bin/webpack-dev-server",
     "test_TODO": "./node_modules/.bin/babel-node ./node_modules/.bin/istanbul cover spec/run.js",
-    "test": "./node_modules/.bin/babel-node spec/run.js"
+    "test": "./node_modules/.bin/babel-node spec/run.js",
+    "lint": "./node_modules/.bin/eslint src"
   },
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "dedent": "^0.7.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-jasmine": "^2.2.0",
     "jasmine": "^2.6.0",
     "jsdom": "^7.2.2",
     "node-jsdom": "^3.1.5",
