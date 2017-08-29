@@ -28,8 +28,8 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
           show: "Hello, World!"
     `,
     html: `
-      <section data-markdown>
-        Hello, World!
+      <section>
+        <div data-markdown>Hello, World!</div>
       </section>
       <section></section>`
   }));
@@ -44,8 +44,8 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
             - "This slide is full of subtitles..."
     `,
     html:`
-      <section data-markdown>
-        This slide has subtitles.
+      <section>
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes">
           This slide is full of subtitles...
         </footer>
@@ -63,8 +63,8 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
           say: "This slide is full of subtitles..."
     `,
     html:`
-      <section data-markdown>
-        This slide has subtitles.
+      <section>
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes">
           This slide is full of subtitles...
         </footer>
@@ -85,8 +85,8 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
             - "See you on the next slide, bye!"
     `,
     html:`
-      <section data-markdown>
-        This slide has subtitles.
+      <section>
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes"> Hello, and welcome to WatchTheDocs! </footer>
         <footer class="audio-notes"> This slide is full of subtitles... </footer>
         <footer class="audio-notes"> See you on the next slide, bye! </footer>
@@ -112,14 +112,14 @@ describe('Simplest cases: RevealJS Slide Generator generates', () => {
             - "It also has plenty of subtitles!"
     `,
     html:`
-      <section data-markdown>
-        This slide has subtitles.
+      <section>
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes"> Hello, and welcome to WatchTheDocs! </footer>
         <footer class="audio-notes"> This slide is full of subtitles... </footer>
         <footer class="audio-notes"> See you on the next slide, bye! </footer>
       </section>
-      <section data-markdown>
-        2nd slide goes here.
+      <section>
+        <div data-markdown>2nd slide goes here.</div>
         <footer class="audio-notes"> This is the 2nd slide. </footer>
         <footer class="audio-notes"> It also has plenty of subtitles! </footer>
       </section>
@@ -148,8 +148,8 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
           show: "Hello, World!"
     `,
     html: `
-      <section data-markdown data-autoslide="10000">
-        Hello, World!
+      <section data-autoslide="10000">
+        <div data-markdown>Hello, World!</div>
       </section>
       <section></section>`
   }));
@@ -165,8 +165,8 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
           duration: 5000
     `,
     html:`
-      <section data-markdown data-autoslide="5000">
-        This slide has subtitles.
+      <section data-autoslide="5000">
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes">
           This slide is full of subtitles...
         </footer>
@@ -185,8 +185,8 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
           say: "This slide is full of subtitles..."
     `,
     html:`
-      <section data-markdown data-autoslide="5000">
-        This slide has subtitles.
+      <section data-autoslide="5000">
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes">
           This slide is full of subtitles...
         </footer>
@@ -211,8 +211,8 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
           duration: 15000
     `,
     html:`
-      <section data-markdown>
-        This slide has subtitles.
+      <section>
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes fragment current-visible" data-autoslide="3947">
           Hello, and welcome to WatchTheDocs!
         </footer>
@@ -245,12 +245,12 @@ describe('RevealJS Slide Generator generates slides with duration:', () => {
             - "Unlike the first one, It has plenty of subtitles!"
     `,
     html:`
-      <section data-markdown data-autoslide="3000">
-        This slide has subtitles.
+      <section data-autoslide="3000">
+        <div data-markdown>This slide has subtitles.</div>
         <footer class="audio-notes"> Hello, and welcome to WatchTheDocs! </footer>
       </section>
-      <section data-markdown>
-        2nd slide goes here.
+      <section>
+        <div data-markdown>2nd slide goes here.</div>
         <footer class="audio-notes fragment current-visible" data-autoslide="3750">
           This is the 2nd slide.
         </footer>
