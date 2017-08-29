@@ -5,7 +5,7 @@ export const customJasmineMatchers = {
   toEqualHtml: (util, customEqualityTesters) => ({
 
     compare: (actual, expected) => {
-      const strip = (v) => v.replace(/>\s+/g, '> ').replace(/\s+</g, ' <');
+      const strip = (v) => v.replace(/>\s+/g, '> ').replace(/\s+</g, ' <').replace(/\n */g, ' ');
       const pass = util.equals(
         jsdom(strip(actual)).body.innerHTML,
         jsdom(strip(expected)).body.innerHTML,
