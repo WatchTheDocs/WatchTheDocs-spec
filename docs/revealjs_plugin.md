@@ -43,8 +43,12 @@ slides:
   -
     duration: 10000
     audio:
-      position: 0
-      duration: 7000
+      -
+        position: 0
+        duration: 4000
+      -
+        position: 4100
+        duration: 5000
     say:
       - "The second slide has a title and one paragraph."
       - "It also has a voice-over."
@@ -59,9 +63,9 @@ slides:
   - **show** -- required list of pieces of markdown, forming a slide
   - **say** -- optional list of strings that go to voiceover
   - **duraiton** -- required integer, duration of the slide in milliseconds
-  - **audio** -- optional map of two integers: **position** and **duration**,
+  - **audio** -- optional list of maps of two integers: **position** and **duration**,
     defining the position within the audio file from which to start playing
-    and play duration for the slide.
+    and play duration for the slide or slide fragment.
 
 
 ## HTML5 file structure

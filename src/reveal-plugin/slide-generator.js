@@ -14,8 +14,11 @@ import template from './templates/slides.mustache.js';
  *     as two intervals.
  *   * Duration of each string is normalized by intervals
  *     to make up the totalLength.
+ *
+ * This method is used when audio is not available.
+ * Otherwise TTS-generated speech marks are used instead.
  */
-const balanceWords = (listOfStrings, totalDuration) => {
+const generateSpeechMarks = (listOfStrings, totalDuration) => {
   const vowels = /[aouie]/i;
   const punctuation = /(\s*[.,;:()!?]\s*)+/ig;
   const intervals = listOfStrings.map(s => (
@@ -47,14 +50,41 @@ const generateSlides = (script) => {
     && context.say.length > 1
   );
 
+  /*
+   * Lambda for determining whether to add `data-autoslide` attribute
+   * to the section or not.
+   */
   const renderAutoSlide = function() { return !!this.duration && !isFragmented(this); };
+
+  /*
+   * Lambda for rendering `data-audio` attribute used for starting
+   * to play audio at a given time mark.
+   */
+  const renderAudio = function() {
+    // TODO
+    return false;
+  };
+
+  /*
+   * Lambda for rendering "Say" blocks
+   */
   const renderSay = function() {
+    // If nothing to say and no audio, don't render anything
     if (!this.say || this.say.length === 0) {
       return function (template, render) { return render(''); };
     }
+
+    // Prepare variables
     let context;
+    const say = this.say.slice();
+    let duration = this.duration;
+
+    // If there is audio, use it for timing what to say
+    // TODO
+
+    // If we still have something to say, then auto-generate speech marks
     if (isFragmented(this)) {
-      context = balanceWords(this.say, this.duration).map(v => ({ text: v[0], duration: v[1] }));
+      context = generateSpeechMarks(say, duration).map(v => ({ text: v[0], duration: v[1] }));
     } else {
       context = (Array.isArray(this.say) ? this.say : [this.say]).map(text => ({ text, duration: false }));
     }
@@ -68,7 +98,7 @@ const generateSlides = (script) => {
   const doc = Object.assign(
     {},
     yaml.safeLoad(script),
-    { renderAutoSlide, renderSay }
+    { renderAutoSlide, renderSay, renderAudio }
   );
 
   // 2. Generate slides and return them as HTML
