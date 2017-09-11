@@ -57,12 +57,11 @@ const generateSlides = (script) => {
   const renderAutoSlide = function() { return !!this.duration && !isFragmented(this); };
 
   /*
-   * Lambda for rendering `data-audio` attribute used for starting
+   * Lambda for determining whether to render `data-audio-*` attributes used for starting
    * to play audio at a given time mark.
    */
   const renderAudio = function() {
-    // TODO
-    return false;
+    return !!this.audio && !!this.audio.length && !isFragmented(this);
   };
 
   /*
@@ -75,16 +74,26 @@ const generateSlides = (script) => {
     }
 
     // Prepare variables
-    let context;
+    let context = [];
     const say = this.say.slice();
     let duration = this.duration;
 
-    // If there is audio, use it for timing what to say
-    // TODO
-
     // If we still have something to say, then auto-generate speech marks
     if (isFragmented(this)) {
-      context = generateSpeechMarks(say, duration).map(v => ({ text: v[0], duration: v[1] }));
+      if (this.audio && this.audio.length) {
+        context = [
+          ...context,
+          ...this.audio.map((audio, i) => {
+            duration -= audio.duration;
+            return { text: this.say[i], duration: audio.duration, audio };
+          })
+        ];
+      }
+      context = [
+        ...context,
+        ...generateSpeechMarks(say.slice(this.audio ? this.audio.length : 0), duration)
+            .map(v => ({ text: v[0], duration: v[1] }))
+      ];
     } else {
       context = (Array.isArray(this.say) ? this.say : [this.say]).map(text => ({ text, duration: false }));
     }
