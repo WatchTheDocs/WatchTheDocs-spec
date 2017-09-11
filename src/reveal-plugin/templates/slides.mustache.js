@@ -15,10 +15,10 @@
       },
       {
         "duration": 10000,
-        "audio": {
-          "position": 0,
-          "duration": 7000
-        },
+        "audio": [
+          { "start": 0, "duration": 5000 },
+          { "start": 5200, "duration": 3500 },
+        ],
         "say": [
           "The second slide has a title and one paragraph.",
           "It also has a voice-over."
@@ -34,10 +34,10 @@
 
 export default `
 {{#slides}}
-  <section {{#renderAutoSlide}} data-autoslide="{{duration}}"{{/renderAutoSlide}}>
+  <section{{#renderAutoSlide}} data-autoslide="{{duration}}"{{/renderAutoSlide}}{{#renderAudio}} data-audio-start="{{audio.0.start}}" data-audio-duration="{{audio.0.duration}}"{{/renderAudio}}>
     {{#show}}<div data-markdown>{{.}}</div>{{/show}}
     {{#renderSay}}
-      <footer class="audio-notes{{#duration}} fragment current-visible{{/duration}}" {{#duration}}data-autoslide="{{.}}"{{/duration}}>
+      <footer class="audio-notes{{#duration}} fragment current-visible{{/duration}}"{{#duration}} data-autoslide="{{.}}"{{/duration}}{{#audio}} data-audio-start="{{start}}" data-audio-duration="{{duration}}"{{/audio}}>
         {{text}}
       </footer> 
     {{/renderSay}}
